@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     }
 
     if (req.method === "POST") {
-        const { rhnid, email } = req.body;
+        const { rhnid, email, phone } = req.body;
         const googleAppsScriptUrl = process.env.URL;
 
         if (!googleAppsScriptUrl) {
