@@ -1,9 +1,8 @@
 export default async function handler(req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*"); // Allow all origins
+    res.setHeader("Access-Control-Allow-Origin", "*"); 
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-    // Handle preflight OPTIONS request
     if (req.method === "OPTIONS") {
         return res.status(200).end();
     }
@@ -17,18 +16,22 @@ export default async function handler(req, res) {
         }
 
         try {
+            console.log("Forwarding data to Google Apps Script:", { rhnid, email });
+
             const response = await fetch(googleAppsScriptUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ rhnid, email }),
             });
 
-            const data = await response.json();
+            const data = await response.text(); // Log the actual response
+
+            console.log("Google Apps Script Response:", data);
             return res.status(200).json({ message: "Data sent to Google Sheets!", response: data });
 
         } catch (error) {
-            console.error("Error forwarding data:", error);
-            return res.status(500).json({ error: "Failed to send data." });
+            console.error("Error forwarding data to Google Apps Script:", error);
+            return res.status(500).json({ error: "Failed to send data.", details: error.message });
         }
     } else {
         return res.status(405).json({ error: "Method Not Allowed" });
