@@ -39,9 +39,6 @@
         input:focus {
             border-color: #A30000; /* Darker Red */
         }
-        label{
-            color: #FFF;
-        }
         button {
             background-color: #CC0000; /* Red Hat Red */
             color: white;
