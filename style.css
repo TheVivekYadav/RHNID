@@ -69,7 +69,8 @@ button:hover {
      }
     .container {
         width: 95%;
-        padding: 15px;
+        max-width:100%;
+         padding: 15px;
     }
 
     h2 {
