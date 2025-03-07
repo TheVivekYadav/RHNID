@@ -1,26 +1,273 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student Form</title>
-<script src="script.js"></script>
-<link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Hat Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-        <div class="container">
-    <h2>Student Details Form</h2>
-    <form onsubmit="submitForm(event)">
-        <label for="rhnid">RHNID:</label>
-        <input type="text" id="rhnid" required/><br><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" required/><br><br>
-
-        <label for="phoneno">Phone No.</label>
-        <input type="number" id="phoneno" required/><br><br>
-
-        <button type="submit">Submit</button>
-    </form>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <h1>Red Hat Academy</h1>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#registration">Registration</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Advance Your Career with Red Hat</h1>
+                <p>Join our student program and gain industry-recognized skills in Linux, cloud, containers, and more.</p>
+                <a href="#registration" class="btn btn-primary">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">Popular Courses</h2>
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-server"></i></div>
+                    <h3>Red Hat Enterprise Linux</h3>
+                    <p>Master the world's leading enterprise Linux platform.</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>OpenShift Administration</h3>
+                    <p>Learn to manage enterprise Kubernetes platforms.</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Ansible Automation</h3>
+                    <p>Automate IT infrastructure with this powerful tool.</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="registration" class="registration">
+        <div class="container">
+            <h2 class="section-title">Student Registration</h2>
+            <div class="form-container">
+                <form id="studentForm">
+                    <div class="form-group">
+                        <label for="rhnid">RHNID:</label>
+                        <input type="text" id="rhnid" required>
+                        <span class="error-message" id="rhnid-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullname">Full Name:</label>
+                        <input type="text" id="fullname" required>
+                        <span class="error-message" id="fullname-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneno">Phone Number:</label>
+                        <input type="tel" id="phoneno" required>
+                        <span class="error-message" id="phoneno-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">Preferred Course:</label>
+                        <select id="course" required>
+                            <option value="">Select a course</option>
+                            <option value="rhel">Red Hat Enterprise Linux</option>
+                            <option value="openshift">OpenShift Administration</option>
+                            <option value="ansible">Ansible Automation</option>
+                        </select>
+                        <span class="error-message" id="course-error"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit Registration</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Red Hat Academy</h2>
+                    <p>Red Hat Academy provides high schools and higher education institutions worldwide with a no-cost curriculum to prepare students for careers in open source. The program provides hands-on instruction, curriculum, labs, performance-based testing, and instructor support.</p>
+                    <p>Our program helps academic institutions keep pace with the demands of industry by delivering resources to help students build knowledge and skills in Linux, cloud, containers, and more.</p>
+                    <a href="#" class="btn btn-secondary">Learn More About Us</a>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h3>1,500+</h3>
+                        <p>Academic Institutions</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>180+</h3>
+                        <p>Countries</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100K+</h3>
+                        <p>Students</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Students Say</h2>
+            <div class="testimonial-slider" id="testimonialSlider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <p>"The Red Hat certification program helped me secure a job right after graduation. The hands-on labs were particularly valuable."</p>
+                        <div class="testimonial-author">
+                            <h4>Sarah Johnson</h4>
+                            <p>Systems Administrator</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"I was able to transition from a help desk role to a DevOps engineer position thanks to the skills I gained through Red Hat Academy."</p>
+                        <div class="testimonial-author">
+                            <h4>Michael Chen</h4>
+                            <p>DevOps Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"The curriculum is well-structured and the instructors are knowledgeable. I feel prepared to take on real-world challenges."</p>
+                        <div class="testimonial-author">
+                            <h4>Priya Patel</h4>
+                            <p>Cloud Architect</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button id="prevBtn" class="slider-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <button id="nextBtn" class="slider-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>100 East Davie Street, Raleigh, NC 27601, USA</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>academy@redhat.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (919) 754-3700</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.9526391511286!2d-78.64102548473858!3d35.77740998017615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ac5f717f80d1e9%3A0x8f6b77648f0b6e50!2sRed%20Hat%2C%20Inc.!5e0!3m2!1sen!2sus!4v1647881760889!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Red Hat Academy</h2>
+                    <p>Empowering the next generation of open source professionals.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#registration">Registration</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Red Hat Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h3>Registration Successful!</h3>
+                <p>Thank you for registering with Red Hat Academy. We'll contact you shortly with next steps.</p>
+                <button class="btn btn-primary" id="modalCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
