@@ -16,12 +16,12 @@ export default async function handler(req, res) {
         }
 
         try {
-            console.log("Forwarding data to Google Apps Script:", { rhnid, email });
+            console.log("Forwarding data to Google Apps Script:", { rhnid, email, phone });
 
             const response = await fetch(googleAppsScriptUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ rhnid, email }),
+                body: JSON.stringify({ rhnid, email, phone }),
             });
 
             const data = await response.text(); // Log the actual response

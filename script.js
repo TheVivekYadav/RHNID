@@ -2,8 +2,9 @@ function submitForm(event) {
     event.preventDefault();
     var rhnid = document.getElementById("rhnid").value;
     var email = document.getElementById("email").value;
+    var phone = document.getElementById("phoneno").value;
 
-    var formData = { rhnid: rhnid, email: email };
+    var formData = { rhnid: rhnid, email: email , phone: phone};
 
     fetch("https://rhnidcollection.vercel.app/api/submit", { // Removed `.js`
         method: "POST",
