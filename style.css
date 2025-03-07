@@ -61,6 +61,12 @@ button:hover {
 
 /* Responsive Design */
 @media (max-width: 480px) {
+     body{
+         font-family: 'Red Hat Display', sans-serif;
+    background-color: #1B1B1B;
+    color: white;
+
+     }
     .container {
         width: 95%;
         padding: 15px;
