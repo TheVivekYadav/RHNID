@@ -20,7 +20,7 @@
         }
         h2 {
             margin-bottom: 20px;
-            color: #FFF; /* Red Hat Red */
+            color: #CCC000; /* Red Hat Red */
             font-weight: 700;
         }
         input {
@@ -34,6 +34,9 @@
         }
         input:focus {
             border-color: #A30000; /* Darker Red */
+        }
+        label{
+            color: #FFF;
         }
         button {
             background-color: #CC0000; /* Red Hat Red */
