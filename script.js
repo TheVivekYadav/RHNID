@@ -31,8 +31,8 @@ function validateForm() {
         rhnidError.textContent = 'RHNID is required';
         rhnidError.style.display = 'block';
         isValid = false;
-    } else if (!/^[A-Za-z0-9]{6,10}$/.test(rhnid.value)) {
-        rhnidError.textContent = 'RHNID must be 6-10 alphanumeric characters';
+    } else if (!/^[A-Za-z0-9]+$/.test(rhnid.value)) {
+        rhnidError.textContent = 'RHNID can only contain letters and numbers';
         rhnidError.style.display = 'block';
         isValid = false;
     } else {
@@ -113,16 +113,13 @@ if (studentForm) {
             fetch("https://rhnidcollection.vercel.app/api/submit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ rhnid, fullname, email, phoneno, course})
+                body: JSON.stringify(formData)
             })
             .then(response => response.json())
-            .then(data => {
-                alert(data.message || "Data submitted successfully!");
-            })
             .catch(err => console.error("Error:", err));
 
 
-            //console.log('Form submitted with data:', formData);
+            console.log('Form submitted with data:', formData);
             
             // Show success modal
             successModal.classList.add('show');
