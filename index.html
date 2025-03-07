@@ -3,20 +3,28 @@
 <head>
     <title>Student Form</title>
     <script>
+
         function submitForm(event) {
-            event.preventDefault();
-            var rhnid = document.getElementById("rhnid").value;
-            var email = document.getElementById("email").value;
+    event.preventDefault();
+    var rhnid = document.getElementById("rhnid").value;
+    var email = document.getElementById("email").value;
 
-            var formData = { rhnid: rhnid, email: email };
+    var formData = { rhnid: rhnid, email: email };
 
-            fetch("https://rhnidcollection.vercel.app/api/submit.js", {
-                method: "POST",
-                mode: "no-cors",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData)
-            }).then(() => alert("Data submitted!")).catch(err => console.error(err));
-        }
+    fetch("https://rhnidcollection.vercel.app/api/submit", { // Removed `.js`
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json()) // Try to read the response
+    .then(data => {
+        console.log("Response:", data);  // Log response
+        alert(data.message || "Data submitted successfully!");
+    })
+    .catch(err => console.error("Error:", err));
+}
+
+
     </script>
 </head>
 <body>
