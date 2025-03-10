@@ -31,11 +31,12 @@ function validateForm() {
         rhnidError.textContent = 'RHNID is required';
         rhnidError.style.display = 'block';
         isValid = false;
-    } else if (rhnid.value) {
-        rhnidError.textContent = 'RHNID can only contain letters and numbers';
-        rhnidError.style.display = 'block';
-        isValid = false;
-    } else {
+    } //else if (rhnid.value) {
+       // rhnidError.textContent = 'RHNID can only contain letters and numbers';
+        //rhnidError.style.display = 'block';
+        //isValid = false;
+    //}
+else {
         rhnidError.style.display = 'none';
     }
     
