@@ -31,7 +31,7 @@ function validateForm() {
         rhnidError.textContent = 'RHNID is required';
         rhnidError.style.display = 'block';
         isValid = false;
-    } else if (!/^[A-Za-z0-9]+$/.test(rhnid.value)) {
+    } else if (rhnid.value) {
         rhnidError.textContent = 'RHNID can only contain letters and numbers';
         rhnidError.style.display = 'block';
         isValid = false;
